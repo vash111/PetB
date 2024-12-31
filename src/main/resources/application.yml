@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/petprice?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul
+    username: root
+    password: 1234
+
+  jpa:
+    hibernate:
+      ddl-auto: update # 애플리케이션 시작 시 테이블 생성 및 업데이트
+    properties:
+      hibernate:
+        show_sql: true    # SQL 쿼리 로깅 활성화
+        format_sql: true  # SQL 쿼리를 가독성 있게 포맷
+    database-platform: org.hibernate.dialect.MySQLDialect # 최신 Hibernate Dialect 사용
+    open-in-view: false # 엔티티 조회 시 open-in-view 비활성화 권장
+
+  servlet:
+    multipart:
+      max-file-size: 20MB # 파일 한 개당 최대 크기
+      max-request-size: 100MB # 요청당 최대 크기
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher # 경로 매칭 방식으로 Ant 스타일 사용
+
+logging:
+  level:
+    org:
+      hibernate.SQL: debug   # SQL 로깅 활성화
+      hibernate.type.descriptor.sql: trace # SQL 파라미터 로깅
+      springframework.security: debug # Spring Security 로그 활성화
