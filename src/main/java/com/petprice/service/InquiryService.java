@@ -69,4 +69,6 @@ public class InquiryService {
         dto.setRepliedAt(inquiry.getRepliedAt());
         return dto;
     }
+
+
 }

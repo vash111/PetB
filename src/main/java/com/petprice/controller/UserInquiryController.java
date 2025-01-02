@@ -1,7 +1,6 @@
 package com.petprice.controller;
 
 import com.petprice.dto.InquiryDto;
-import com.petprice.dto.InquiryResponseDto;
 import com.petprice.entity.Inquiry;
 import com.petprice.entity.User;
 import com.petprice.service.InquiryService;
@@ -10,7 +9,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/inquiries")
