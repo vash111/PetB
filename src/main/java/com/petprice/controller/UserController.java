@@ -59,7 +59,7 @@ public class UserController {
         return ResponseEntity.status(401).body("로그인 실패: 이메일 또는 비밀번호가 잘못되었습니다.");
     }
 
-
+    // 유저 정보를 받기 위한 세션
     @GetMapping("/session")
     public ResponseEntity<?> getSession(HttpSession session) {
         User user = (User) session.getAttribute("user");

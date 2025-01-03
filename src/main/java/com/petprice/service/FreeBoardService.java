@@ -185,7 +185,7 @@ public class FreeBoardService {
                 .collect(Collectors.toList());
     }
 
-    // DTO 변환 메서드
+    // 게시글 DTO 변환 메서드
     private FreeBoardDTO convertToDTO(FreeBoard freeBoard, User currentUser) {
         FreeBoardDTO dto = new FreeBoardDTO();
         dto.setId(freeBoard.getId());
@@ -194,16 +194,21 @@ public class FreeBoardService {
         dto.setCategory(freeBoard.getCategory());
         dto.setViews(freeBoard.getViews());
         dto.setLikes(freeBoard.getLikes());
+        dto.setCreatedAt(freeBoard.getCreatedAt());
+        dto.setRepliedAt(freeBoard.getRepliedAt());
         dto.setAuthorUsername(freeBoard.getAuthor().getUsername());
         dto.setLikedByUser(currentUser != null && freeBoard.getLikedUsers().contains(currentUser)); // Null 체크
         return dto;
     }
 
+    // 게시글 댓글 DTO 변환 메서드
     private CommentDTO convertToDTO(Comment comment) {
         CommentDTO dto = new CommentDTO();
         dto.setId(comment.getId());
         dto.setContent(comment.getContent());
         dto.setAuthorUsername(comment.getAuthor().getUsername());
+        dto.setCreatedAt(comment.getCreatedAt());
+        dto.setRepliedAt(comment.getRepliedAt());
         return dto;
     }
 }
