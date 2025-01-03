@@ -35,10 +35,14 @@ public class SecurityConfig {
                 )
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/",
+                                "/api/animal/**",
                                 "/api/users/**",
                                 "/api/public/**",
                                 "/api/users/**",
+                                "/api/regions/sido",
+                                "/api/regions/sigungu",
                                 "/api/inquiries/**",
+                                "/api/regions/**",
                                 "/static/**",
                                 "/index.html",
                                 "/AboutPage",

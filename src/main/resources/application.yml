@@ -33,3 +33,8 @@ logging:
       hibernate.SQL: debug   # SQL 로깅 활성화
       hibernate.type.descriptor.sql: trace # SQL 파라미터 로깅
       springframework.security: debug # Spring Security 로그 활성화
+
+external:
+  api:
+    key: inmP%2F0x0%2FLlrmtKcNuDjym5RuNIz4l3%2FN5ZIAI6BKjnnzid3jyvWj0fDOmAyt05qUd3nXfvNAj6qFVWhXTFo%2FQ%3D%3D
+

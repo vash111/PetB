@@ -30,7 +30,6 @@ public class UserController {
         }
     }
 
-
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody UserDto loginDto, HttpSession session) {
         if (userService.validateUserLogin(loginDto.getEmail(), loginDto.getPassword())) {

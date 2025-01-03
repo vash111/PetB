@@ -25,4 +25,10 @@ public class UserDto {
     @NotBlank(message = "전화번호는 필수 입력 항목입니다.")
     @Pattern(regexp = "^\\d{10,15}$", message = "전화번호는 10자리에서 15자리의 숫자로 입력해야 합니다.")
     private String phoneNumber;
+
+    @NotBlank(message = "원활한 서비스 이용을 위해 필수 입력 항목입니다.")
+    private String sido; // 시도 정보
+
+    @NotBlank(message = "원활한 서비스 이용을 위해 필수 입력 항목입니다.")
+    private String sigungu; // 시군구 정보
 }

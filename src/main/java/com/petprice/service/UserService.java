@@ -20,7 +20,9 @@ public class UserService {
                 userDto.getEmail(),
                 userDto.getName(),
                 passwordEncoder.encode(userDto.getPassword()),
-                userDto.getPhoneNumber()
+                userDto.getPhoneNumber(),
+                userDto.getSido(),
+                userDto.getSigungu()
         );
         return userRepository.save(user);
     }

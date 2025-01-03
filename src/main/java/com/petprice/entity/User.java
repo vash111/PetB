@@ -32,15 +32,23 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    @Column(nullable = true)
+    private String sido; // 시도 정보
+
+    @Column(nullable = true)
+    private String sigungu; // 시군구 정보
+
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 
-    public static User createGeneralUser(String email, String username, String password, String phoneNumber) {
+    public static User createGeneralUser(String email, String username, String password, String phoneNumber, String sido, String sigungu) {
         User user = new User();
         user.setEmail(email);
         user.setUsername(username);
         user.setPassword(password);
         user.setPhoneNumber(phoneNumber);
+        user.setSido(sido);
+        user.setSigungu(sigungu);
         user.setRole(Role.ADMIN);
         return user;
     }
@@ -52,5 +60,4 @@ public class User {
         user.setRole(Role.SOCIAL_USER);
         return user;
     }
-
 }
